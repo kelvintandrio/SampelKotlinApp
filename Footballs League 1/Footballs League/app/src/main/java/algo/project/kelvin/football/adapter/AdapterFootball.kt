@@ -1,7 +1,9 @@
 package algo.project.kelvin.football.adapter
 
+import algo.project.kelvin.football.DetailFootball
 import algo.project.kelvin.football.model.Football
 import algo.project.kelvin.football.ui.FootballMainUI
+import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
@@ -17,30 +19,30 @@ class AdapterFootball(private val list: ArrayList<Football> = arrayListOf()) : R
     }
 
     override fun onBindViewHolder(holder: FootballViewHolder, position: Int) {
-//        holder.bindItem(list[position])
         val football = list[position]
         holder.nameFootball.text = football.titleFootball
         football.logoFootball.let {
             Picasso.get().load(it).into(holder.logoFootball)
         }
+
     }
 
     override fun getItemCount(): Int {
         return list.size
     }
 
-    inner class FootballViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var nameFootball: TextView
-        var logoFootball: ImageView
+    inner class FootballViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
+        var nameFootball: TextView = itemView.findViewById(FootballMainUI.TitleFootball)
+        var logoFootball: ImageView = itemView.findViewById(FootballMainUI.LogoFootball)
 
         init {
-            nameFootball = itemView.findViewById(FootballMainUI.TitleFootball)
-            logoFootball = itemView.findViewById(FootballMainUI.LogoFootball)
+            itemView.setOnClickListener(this)
         }
 
-//        fun bindItem(items: ClipData.Item) {
-//            nameFootball.text =
-//            logoFootball.image?.let { Picasso.get().load(it).into(image) }
-//        }
+        override fun onClick(v: View?) {
+            //Toast.makeText(itemView.context, "You choose "+nameFootball.text.toString(), Toast.LENGTH_SHORT).show()
+            startActivity<DetailFootball>("NAME_FOOTBALL" to "Dicoding")
+            toast("Hello")
+        }
     }
 }

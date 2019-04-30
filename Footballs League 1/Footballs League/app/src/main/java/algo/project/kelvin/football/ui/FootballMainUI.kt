@@ -1,5 +1,7 @@
 package algo.project.kelvin.football.ui
 
+import android.graphics.Color
+import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import org.jetbrains.anko.*
@@ -16,34 +18,19 @@ class FootballMainUI : AnkoComponent<ViewGroup> {
             lparams(matchParent, wrapContent)
             padding = dip(16)
 
-//            imageView {
-//                id = LogoFootball
-//                setImageResource(id)
-//                layoutParams = LinearLayout.LayoutParams(matchParent, wrapContent)
-//            }
-
-            imageView(LogoFootball).lparams(dip(100), dip(100)) {
-                margin = dip(16)
+            imageView {
+                id = LogoFootball
+                setImageResource(id)
+                layoutParams = LinearLayout.LayoutParams(matchParent, wrapContent)
             }
-
-//            textView {
-//                id = LogoFootball
-//                layoutParams = LinearLayout.LayoutParams(matchParent, wrapContent)
-//                text = "Sherlock"
-//                textSize = 16f // <- it is sp, no worries
-//                //textColor = Color.BLACK
-//            }
 
             textView {
                 id = TitleFootball
                 layoutParams = LinearLayout.LayoutParams(matchParent, wrapContent)
-                text = "2009"
-                textSize = 16f
+                textAlignment = View.TEXT_ALIGNMENT_CENTER
+                textColor = Color.BLACK
+                textSize = 20f
             }
-
-//            imageView(R.drawable.img_english_premier_league).lparams(matchParent, wrapContent) {
-//                margin = dip(16);
-//            }
         }
     }
 }
