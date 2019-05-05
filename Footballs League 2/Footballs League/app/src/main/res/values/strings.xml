@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Football</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="description">DESCRIPTION :</string>
+    <string name="name">Name</string>
+    <string name="nama_pertandingan">nama pertandingan</string>
+    <string name="nama_file_pertandingan">nama file pertandingan</string>
+    <string name="nama_tim">Nama tim</string>
+    <string name="_1_1">1:1</string>
+</resources>
