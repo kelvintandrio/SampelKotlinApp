@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+      android:layout_height="wrap_content" >
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/rounded_white"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+        <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/nama_pertandingan"
+              android:textAlignment="center"
+              android:textColor="@android:color/black"
+              android:textSize="24sp"
+              android:textStyle="bold"
+              android:id="@+id/nameMatch"/>
+
+        <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/nama_file_pertandingan"
+              android:textAlignment="center"
+              android:textColor="@android:color/black"
+              android:textSize="12sp"
+              android:textStyle="normal"
+              android:id="@+id/nameFileMatch"/>
+
+        <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="200dp"
+              android:orientation="horizontal">
+
+            <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/piala"
+                    android:layout_weight="0.33"
+                    tools:ignore="ContentDescription"/>
+
+            <TextView
+                  android:layout_width="0dp"
+                  android:id="@+id/scoreEvent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/_1_1"
+                  android:layout_weight="0.33"
+                  android:textColor="@android:color/black"
+                  android:textAlignment="center"
+                  android:textSize="48sp"
+                  android:layout_gravity="center"/>
+
+            <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/piala"
+                    android:layout_weight="0.33"
+                    tools:ignore="ContentDescription"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal">
+
+            <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/nama_tim"
+                  android:textColor="@android:color/black"
+                  android:textAlignment="center"
+                  android:layout_weight="0.33"
+                  android:id="@+id/nameTim1"/>
+
+            <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="0.33"/>
+
+            <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="@string/nama_tim"
+                  android:textColor="@android:color/black"
+                  android:textAlignment="center"
+                  android:layout_weight="0.33"
+                  android:id="@+id/nameTim2"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
