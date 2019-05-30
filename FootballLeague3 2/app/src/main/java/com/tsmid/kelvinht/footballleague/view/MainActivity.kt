@@ -1,7 +1,7 @@
 package com.tsmid.kelvinht.footballleague.view
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import com.tsmid.kelvinht.footballleague.R
 import com.tsmid.kelvinht.footballleague.adapter.AdapterFootball
