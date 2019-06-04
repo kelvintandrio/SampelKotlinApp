@@ -30,6 +30,7 @@ class DetailFootballPresenterTest {
         val websiteLeague = "www.mlssoccer.com"
 
         presenter.getDetailFootball(idLeague)
+
         Mockito.verify(view).setTextNameFootball(nameLeague)
         Mockito.verify(view).setImageLogoFootball(logoLeague)
         Mockito.verify(view).setTextYearFootball(yearLeague)

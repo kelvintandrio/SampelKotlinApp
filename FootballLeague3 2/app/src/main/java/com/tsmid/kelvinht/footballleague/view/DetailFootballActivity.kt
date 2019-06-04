@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import com.squareup.picasso.Picasso
 import com.tsmid.kelvinht.footballleague.R
+import com.tsmid.kelvinht.footballleague.api.MatchRepository
 import com.tsmid.kelvinht.footballleague.inter.IDetailFootballActivity
 import com.tsmid.kelvinht.footballleague.inter.IDetailFootballPresenter
 import com.tsmid.kelvinht.footballleague.presenter.DetailFootballPresenter
@@ -20,7 +21,7 @@ class DetailFootballActivity : AppCompatActivity(), IDetailFootballActivity {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_football)
 
-        detailFootballPresenter = DetailFootballPresenter(this)
+        detailFootballPresenter = DetailFootballPresenter(this, MatchRepository())
         val tabLayout: TabLayout = findViewById(R.id.tab_layout)
         val viewPager: ViewPager = findViewById(R.id.view_pager)
 

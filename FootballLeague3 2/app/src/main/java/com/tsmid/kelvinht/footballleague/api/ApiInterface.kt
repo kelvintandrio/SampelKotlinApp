@@ -26,9 +26,7 @@ interface ApiInterface {
     ): Call<String>
 
     @GET("lookupevent.php?")
-    fun getDetailMatch(
-        @Query("id") idLeague: String?
-    ): Call<String>
+    fun getDetailMatch(@Query("id") idLeague: String?): Call<String>
 
     @GET("searchevents.php?")
     fun getSearchFootballMatch(
