@@ -10,7 +10,7 @@ class MatchRepository {
     fun getDetailMatch(id: String, callback: MatchRepositoryCallback<String?>) {
         MyRetrofit
             .createService(ApiInterface::class.java)
-            .getDetailMatch(id)
+            .getFootballDetail(id)
             .enqueue(object : Callback<String?> {
                 override fun onFailure(call: Call<String?>?, t: Throwable?) {
                     Log.e("Error","Gagal "+t.toString())
@@ -20,7 +20,7 @@ class MatchRepository {
                 override fun onResponse(call: Call<String?>?, response: Response<String?>?) {
                     response?.let {
                         if (it.isSuccessful) {
-                            Log.i("Success", response.body().toString())
+                            Log.i("Success", "Response Sukses")
                             callback.onDataLoaded(it.body())
                         }
                         else {

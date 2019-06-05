@@ -53,4 +53,13 @@ class DetailFootballActivity : AppCompatActivity(), IDetailFootballActivity {
     override fun setTextWebsiteFootball(website: String) {
         websiteFootball.text = "Website : $website"
     }
+
+    override fun onDataLoaded(data: String?) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun onDataError() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
 }

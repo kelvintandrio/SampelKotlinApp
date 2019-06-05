@@ -1,6 +1,8 @@
 package com.tsmid.kelvinht.footballleague.inter
 
-interface IDetailFootballActivity {
+import com.tsmid.kelvinht.footballleague.api.MatchRepositoryCallback
+
+interface IDetailFootballActivity : MatchRepositoryCallback<String> {
     fun setTextNameFootball(name: String)
     fun setImageLogoFootball(logo: String)
     fun setTextYearFootball(year: String)

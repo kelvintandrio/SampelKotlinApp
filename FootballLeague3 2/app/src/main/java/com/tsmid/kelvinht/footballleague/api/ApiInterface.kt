@@ -11,25 +11,17 @@ interface ApiInterface {
     }
 
     @GET("lookupleague.php?")
-    fun getFootballDetail(
-        @Query("id") idLeague: String
-    ): Call<String>
+    fun getFootballDetail(@Query("id") idLeague: String): Call<String>
 
     @GET("eventspastleague.php?")
-    fun getPreviousMatch(
-        @Query("id") idLeague: String?
-    ): Call<String>
+    fun getPreviousMatch(@Query("id") idLeague: String?): Call<String>
 
     @GET("eventsnextleague.php?")
-    fun getNextMatch(
-        @Query("id") idLeague: String?
-    ): Call<String>
+    fun getNextMatch(@Query("id") idLeague: String?): Call<String>
 
     @GET("lookupevent.php?")
     fun getDetailMatch(@Query("id") idLeague: String?): Call<String>
 
     @GET("searchevents.php?")
-    fun getSearchFootballMatch(
-        @Query("e") query: String?
-    ): Call<String>
+    fun getSearchFootballMatch(@Query("e") query: String?): Call<String>
 }
