@@ -10,8 +10,10 @@ import com.tsmid.kelvinht.footballleague.R
 import com.tsmid.kelvinht.footballleague.api.MatchRepository
 import com.tsmid.kelvinht.footballleague.inter.IDetailFootballActivity
 import com.tsmid.kelvinht.footballleague.inter.IDetailFootballPresenter
+import com.tsmid.kelvinht.footballleague.model.MatchResponse
 import com.tsmid.kelvinht.footballleague.presenter.DetailFootballPresenter
 import kotlinx.android.synthetic.main.activity_detail_football.*
+import org.jetbrains.anko.toast
 
 class DetailFootballActivity : AppCompatActivity(), IDetailFootballActivity {
 
@@ -29,37 +31,45 @@ class DetailFootballActivity : AppCompatActivity(), IDetailFootballActivity {
     }
 
     @SuppressLint("SetTextI18n")
-    override fun setTextNameFootball(name: String) {
+    override fun setTextNameFootball(name: String?) {
         nameFootball.text = "Name : $name"
     }
 
-    override fun setImageLogoFootball(logo: String) {
+    override fun setImageLogoFootball(logo: String?) {
         logo.let {
             Picasso.get().load(it).into(logoFootball)
         }
     }
 
     @SuppressLint("SetTextI18n")
-    override fun setTextYearFootball(year: String) {
+    override fun setTextYearFootball(year: String?) {
         yearFootball.text = "Year : $year"
     }
 
     @SuppressLint("SetTextI18n")
-    override fun setTextCountryFootball(country: String) {
+    override fun setTextCountryFootball(country: String?) {
         countryFootball.text = "Country : $country"
     }
 
     @SuppressLint("SetTextI18n")
-    override fun setTextWebsiteFootball(website: String) {
+    override fun setTextWebsiteFootball(website: String?) {
         websiteFootball.text = "Website : $website"
     }
 
-    override fun onDataLoaded(data: String?) {
+    override fun onDataLoaded(data: MatchResponse?) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun onDataError() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun successLoadData() {
+        toast("Sukses Akses Data")
+    }
+
+    override fun failedLoadData() {
+        toast("Gagal Akses Data")
     }
 
 }

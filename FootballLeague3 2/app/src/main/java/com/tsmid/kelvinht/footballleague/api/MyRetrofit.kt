@@ -1,6 +1,7 @@
 package com.tsmid.kelvinht.footballleague.api
 
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 
 object MyRetrofit {
@@ -8,7 +9,7 @@ object MyRetrofit {
     private fun iniRetrofit(): Retrofit {
         return Retrofit.Builder()
                 .baseUrl(ApiInterface.JSONURL.url)
-                .addConverterFactory(ScalarsConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
                 .build()
     }
 

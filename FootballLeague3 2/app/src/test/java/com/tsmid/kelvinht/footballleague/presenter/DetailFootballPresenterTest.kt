@@ -5,6 +5,7 @@ import com.nhaarman.mockito_kotlin.eq
 import com.tsmid.kelvinht.footballleague.api.MatchRepository
 import com.tsmid.kelvinht.footballleague.api.MatchRepositoryCallback
 import com.tsmid.kelvinht.footballleague.inter.IDetailFootballActivity
+import com.tsmid.kelvinht.footballleague.model.MatchResponse
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mock
@@ -20,6 +21,9 @@ class DetailFootballPresenterTest {
     @Mock
     private lateinit var matchRepository: MatchRepository
 
+    @Mock
+    private lateinit var matchResponse: MatchResponse
+
     private lateinit var presenter: DetailFootballPresenter
 
     @Before
@@ -32,13 +36,17 @@ class DetailFootballPresenterTest {
     fun getDetailFootball() {
 
         val id = "4346"
-        val nameLeague = "American Major League"
         presenter.getDetailFootball(id)
 
-        argumentCaptor<MatchRepositoryCallback<String?>>().apply {
+        argumentCaptor<MatchRepositoryCallback<MatchResponse?>>().apply {
             verify(matchRepository).getDetailMatch(eq(id), capture())
+            firstValue.onDataLoaded(matchResponse)
         }
 
-        Mockito.verify(view).setTextNameFootball(nameLeague)
+//        Mockito.verify(view).setTextNameFootball("American Major League Soccer")
+
+//        Mockito.verify(view)
+
+//        Mockito.verify(view).setTextNameFootball(nameLeague)
     }
 }
