@@ -10,12 +10,15 @@ import com.tsmid.kelvinht.footballleague.R
 import com.tsmid.kelvinht.footballleague.api.MatchRepository
 import com.tsmid.kelvinht.footballleague.inter.IDetailFootballActivity
 import com.tsmid.kelvinht.footballleague.inter.IDetailFootballPresenter
-import com.tsmid.kelvinht.footballleague.model.MatchResponse
+import com.tsmid.kelvinht.footballleague.model.DetailFootball
 import com.tsmid.kelvinht.footballleague.presenter.DetailFootballPresenter
 import kotlinx.android.synthetic.main.activity_detail_football.*
 import org.jetbrains.anko.toast
 
 class DetailFootballActivity : AppCompatActivity(), IDetailFootballActivity {
+    override fun getNameFootball(name: String?) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     private lateinit var detailFootballPresenter: IDetailFootballPresenter
 
@@ -56,7 +59,7 @@ class DetailFootballActivity : AppCompatActivity(), IDetailFootballActivity {
         websiteFootball.text = "Website : $website"
     }
 
-    override fun onDataLoaded(data: MatchResponse?) {
+    override fun onDataLoaded(data: DetailFootball?) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 

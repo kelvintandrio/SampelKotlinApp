@@ -1,23 +1,9 @@
 package com.tsmid.kelvinht.footballleague.model
 
-import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
+import com.tsmid.kelvinht.footballleague.model.attribute.AttributeDetailFootball
 
-data class DetailFootball(
-
-    @field:SerializedName("strLeague")
-    val nameFootball : String? = null,
-
-    @field:SerializedName("strLogo")
-    val logoFootball : String? = null,
-
-    @field:SerializedName("intFormedYear")
-    val yearFootball : String? = null,
-
-    @field:SerializedName("strCountry")
-    val countryFootball : String? = null,
-
-    @field:SerializedName("strWebsite")
-    val websiteFootball : String? = null
+data class DetailFootball (
+    @field:SerializedName("leagues")
+    val events: ArrayList<AttributeDetailFootball>? = null
 )

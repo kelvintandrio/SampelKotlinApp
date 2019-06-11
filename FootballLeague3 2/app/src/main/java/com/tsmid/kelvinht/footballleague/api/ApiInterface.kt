@@ -1,7 +1,7 @@
 package com.tsmid.kelvinht.footballleague.api
 
 import com.tsmid.kelvinht.footballleague.BuildConfig
-import com.tsmid.kelvinht.footballleague.model.MatchResponse
+import com.tsmid.kelvinht.footballleague.model.DetailFootball
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -12,7 +12,7 @@ interface ApiInterface {
     }
 
     @GET("lookupleague.php?")
-    fun getFootballDetail(@Query("id") idLeague: String): Call<MatchResponse>
+    fun getFootballDetail(@Query("id") idLeague: String): Call<DetailFootball>
 
     @GET("eventspastleague.php?")
     fun getPreviousMatch(@Query("id") idLeague: String?): Call<String>
