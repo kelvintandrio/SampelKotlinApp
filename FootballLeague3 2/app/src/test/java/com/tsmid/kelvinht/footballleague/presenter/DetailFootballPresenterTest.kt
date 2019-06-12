@@ -42,6 +42,7 @@ class DetailFootballPresenterTest {
             firstValue.onDataLoaded(matchResponse)
             firstValue.getNameFootball("American Major League Soccer")
         }
+
         Mockito.verify(view).successLoadData()
         Mockito.verify(view).setTextNameFootball("American Major League Soccer")
     }

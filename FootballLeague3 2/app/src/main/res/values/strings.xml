@@ -1,21 +1,21 @@
 <resources>
     <string name="app_name">FootballLeague</string>
     <string name="sampel">Sampel</string>
-    <string name="description">DESCRIPTION :</string>
-    <string name="name">Name</string>
     <string name="nama_pertandingan">nama pertandingan</string>
     <string name="nama_file_pertandingan">nama file pertandingan</string>
     <string name="nama_tim">Nama tim</string>
-    <string name="_1_1">1:1</string>
+    <string name="_1_1">%1d : %1d</string>
     <string name="score">Score</string>
     <string name="shot">Shot</string>
     <string name="formation">Formation</string>
     <string name="goal_detail">Goal Detail</string>
     <string name="yellow_card">Yellow Card</string>
     <string name="red_card">Red Card</string>
-    <string name="search">SEARCH</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="your_favorite">Your Favorite</string>
+    <string name="round">Round :</string>
+    <string name="date">Date :</string>
+    <string name="search_title">Search Match</string>
+    <string name="search_hint">Cari</string>
 </resources>

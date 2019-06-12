@@ -6,18 +6,18 @@ import com.tsmid.kelvinht.footballleague.inter.IFootballMatchFragment
 import com.tsmid.kelvinht.footballleague.inter.IFootballMatchPresenter
 import com.tsmid.kelvinht.footballleague.model.MatchFootball
 
-class PreviousMatchPresenter (private var previousMatchFragment: IFootballMatchFragment,
-                              private val matchRepository: MatchRepository) : IFootballMatchPresenter {
+class NextMatchPresenter (private var nextMatchFragment: IFootballMatchFragment,
+                          private val matchRepository: MatchRepository) : IFootballMatchPresenter {
 
     override fun getMatch(id : String) {
-        matchRepository.getPreviousMatch(id, object : MatchRepositoryCallbackFootballMatch<MatchFootball?> {
+        matchRepository.getNextMatch(id, object : MatchRepositoryCallbackFootballMatch<MatchFootball?> {
             override fun onDataLoadedFootballMatch(data: MatchFootball?) {
-                previousMatchFragment.setDataMatch(data)
-                previousMatchFragment.successAccess()
+                nextMatchFragment.setDataMatch(data)
+                nextMatchFragment.successAccess()
             }
 
             override fun onDataErrorFootballMatch() {
-                previousMatchFragment.failedAccess()
+                nextMatchFragment.failedAccess()
             }
 
         })
