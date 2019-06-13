@@ -26,10 +26,10 @@ class PreviousMatchFragment: Fragment(), IFootballMatchFragment {
         val view = inflater.inflate(R.layout.fragment_previous_match, container, false)
 
         previousMatchFragment = PreviousMatchPresenter(this, MatchRepository())
-        previousMatchFragment.getMatch("4346")
-//        arguments?.getString("ID_MATCH")?.let {
-//            previousMatchFragment.getMatch(it)
-//        }
+//        previousMatchFragment.getMatch("4346")
+        arguments?.getString("ID_MATCH")?.let {
+            previousMatchFragment.getMatch(it)
+        }
 
         return view
     }

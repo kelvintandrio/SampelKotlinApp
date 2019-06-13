@@ -37,8 +37,8 @@ class DetailFootballActivity : AppCompatActivity(), IDetailFootballActivity {
 
         // This is section to get data Details Football //
         detailFootballPresenter = DetailFootballPresenter(this, MatchRepository())
-        detailFootballPresenter.getDetailFootball("4346")
-//        detailFootballPresenter.getDetailFootball(intent.getStringExtra("ID_FOOTBALL"))
+//        detailFootballPresenter.getDetailFootball("4346")
+        detailFootballPresenter.getDetailFootball(intent.getStringExtra("ID_FOOTBALL"))
         // Ending for this section //
 
         // This is section to make TabLayout Previous Match and Next Match
@@ -50,8 +50,8 @@ class DetailFootballActivity : AppCompatActivity(), IDetailFootballActivity {
         val prevMatch = PreviousMatchFragment()
 
         val bundleNext = Bundle()
-        bundleNext.putString("ID_MATCH", "4346")
-//        bundleNext.putString("ID_MATCH", intent.getStringExtra("ID_FOOTBALL"))
+//        bundleNext.putString("ID_MATCH", "4346")
+        bundleNext.putString("ID_MATCH", intent.getStringExtra("ID_FOOTBALL"))
 
         nextMatch.arguments = bundleNext
         prevMatch.arguments = bundleNext
@@ -86,17 +86,14 @@ class DetailFootballActivity : AppCompatActivity(), IDetailFootballActivity {
             setSearchableInfo(searchManager.getSearchableInfo(componentName))
         }
         searchView.setOnSearchClickListener {
-            Log.i("SEARCHVIEW","Search View Berjalan")
             id_page_search_football.visibility = View.VISIBLE
         }
         searchView.queryHint = "Cari"
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextChange(newText: String): Boolean {
-                Log.i("SearchString", "Anda input : $newText")
                 return false
             }
             override fun onQueryTextSubmit(query: String): Boolean {
-                Log.i("SearchSubmit", "Anda input : $query")
                 detailFootballPresenter.getSearchFootballMatch(query)
                 return false
             }

@@ -26,10 +26,10 @@ class NextMatchFragment : Fragment(), IFootballMatchFragment {
         val View = inflater.inflate(R.layout.fragment_next_match, container, false)
 
         nextMatchFragment = NextMatchPresenter(this, MatchRepository())
-        nextMatchFragment.getMatch("4346")
-//        arguments?.getString("ID_MATCH")?.let {
-//            nextMatchFragment.getMatch(it)
-//        }
+//        nextMatchFragment.getMatch("4346")
+        arguments?.getString("ID_MATCH")?.let {
+            nextMatchFragment.getMatch(it)
+        }
 
         return View
     }
